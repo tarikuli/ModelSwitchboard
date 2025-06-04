@@ -12,7 +12,7 @@ with st.sidebar:
     st.title("OpenRouter Chatbot")
     
     # API key input
-    api_key = st.text_input("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", type="password")
+    api_key = st.text_input(OPENROUT_API_KEY, type="password")
     
     # Model selection dropdown
     models = [
