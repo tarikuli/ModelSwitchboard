@@ -1,13 +1,13 @@
 import streamlit as st
 import requests
 
-st.set_page_config(page_title="OpenRouter Chatbot", layout="wide")
+st.set_page_config(page_title="Model Switch Board Chatbot", layout="wide")
 
 
 def sidebar():
     with st.sidebar:
-        st.title("OpenRouter Chatbot")
-        api_key = st.text_input("OpenRouter API Key", type="password")
+        st.title("Model Switch Board Chatbot")
+        api_key = st.text_input("Model Switch Board API Key", type="password")
         selected_model = st.selectbox("Choose a model", fetch_models())
         temperature = st.slider("Temperature", 0.0, 1.0, 0.7, 0.1)
         max_tokens = st.number_input(
@@ -16,7 +16,7 @@ def sidebar():
 
 
 def fetch_models():
-    """Fetch available models from OpenRouter API, fallback to default list on failure."""
+    """Fetch available models from Model Switch Board API, fallback to default list on failure."""
     try:
         response = requests.get(
             "https://openrouter.ai/api/v1/models", timeout=10)
